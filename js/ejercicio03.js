@@ -1,49 +1,39 @@
-/////////////////////////////////////7
-console.warn("STRINGS")
+//Objetooooooooooos
 
-const alumno = "Derek";
-let producto = 'Sesni'
+console.warn ("Objetos")
 
+const producto = {
+    nombre: "Tablet", //Para declarar una variable se ocupa : en vez de = y , al final de cada variable
+    precio : 300,
+    disponible : true
+}
 
-const numero = "30"
-const numero2= 30 
+console.log(producto)
+console.table(producto) // Imprimir las propiedades en una tabla
 
-console.log(typeof numero)
-console.log(typeof numero2)
+console.log(producto.nombre) //Solo imprime una propiedad
 
-/////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////7
 
+console.warn ("Desturction")
 
-console.warn("Big Int")
-
-const numeroG= BigInt (9999999999999999999999999999999999999999999999999)
-console.log(`El numero con funcion Big Int es:${typeof(numeroG)} `);
-
-const numeroGd= 9999999999999999999999999999999999999999999999999
-console.log(`El numero sin funcion Big Int es: ${typeof(numeroGd)} `);
+const { imagen } = producto; // Puedes crear una  variable 
+console.log (typeof (imagen)) // Indefinidooo
 
 
-const numero11="10";
-const numero22=10;
+const { nombre , precio , disponible} = producto; //Extrae las propiedades del objeto
 
-console.log (numero11+ Number(numeroG))
+console.log (nombre)
+console.log (precio)
+console.log (disponible)
 
-//////////////////////////////////////////////////7
+const autenticado = true;
+const usuario = "Juan"
 
+const nuevoObjeto = {
 
-console.warn("Symbol")
+    autenticado,
+    usuario
+}
 
-const primerSymbol = Symbol(30)
-const segundoSymbol = Symbol(30)
-
-console.log(primerSymbol == segundoSymbol)
-console.log(primerSymbol.valueOf())
-console.log(segundoSymbol.valueOf())
-
-
-////////////////////////////
-
-
-console.warn("Null")
-const descuento= null
-console.log(typeof descuento)
+console.table(nuevoObjeto)
