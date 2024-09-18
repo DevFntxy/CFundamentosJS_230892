@@ -8,11 +8,11 @@ Precio a iniciar el desarrollo de software para web usando el framework de NodeJ
 ## Historial de practicas 
 | No. | Descripción                                     | Potenciador|Estatus |
 | --- | ----------------------------------------------- |------------| -------|
-| 1.  | Metodología de Evaluación |1| Activa  |
-| 2.  | Inicialización del proyecto de Fundamentos de JS |5| Activa  |
-| 3.  | Declaracion de variables (Undefined/Boolean/Number)|10| Activa  |
-| 4.  | Declaracion de variables (String/BigInt/Symbol/Null/Fuction) |10| Activa  |
-| 5.  | Introduccion a Objetos || Activa  |
+| 1.  | Metodología de Evaluación |1| Finalizada  |
+| 2.  | Inicialización del proyecto de Fundamentos de JS |5| Finalizada |
+| 3.  | Declaracion de variables (Undefined/Boolean/Number)|10| Finalizada  |
+| 4.  | Declaracion de variables (StringBigInt/Symbol/Null/Fuction) |Por definir| Activa |
+| 5.  | Introduccion a Objetos || Activa |
 
 ## Autor
 Derek Sesni Carreño
