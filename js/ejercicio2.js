@@ -195,7 +195,7 @@ else{
     console.log(`Se han comparado los valores de numero5555 y numero9999, confirmado que NO tiene el mismo valor`)
 }
 
-
+console.warn("NULL")
 
 ////////////////////////////
 
@@ -227,3 +227,31 @@ estatusRelacionSencitmental= null;
 
 console.log(`El usuario ${nombreUsuario} se ha logeado existosamente, al tener acceso a su informacion de perfil y podemos dedusir que
     su genero es: ${generoUsuario}, y su situacion sentimental es: ${estatusRelacionSencitmental} y su ultima publicacion de realizo ${fecha_ultimoPost}` )
+
+
+    //Comparando null vs Undefield
+    //Si bien undenfined }
+
+    //Mismo valor diferenye dato
+    console.log("Comparacion de equidad")
+    console.log(
+    (fecha_ultimoPost == estatusRelacionSencitmental)?
+        console.log("Ambas varieables tienen el mismo valor "):
+        console.log("La variable no tienen el mismo valor ")
+    );
+
+    console.log("Comparacion de identidad")
+    console.log(
+        (fecha_ultimoPost === estatusRelacionSencitmental)?
+            console.log("Ambas varieables tienen el mismo valor y el mismo tipo de dato "):
+            console.log("La variables tienen el mismo valor, pero no el mismo tipo  de dato")
+    );
+
+    console.warn("FUCTION")
+
+    //Declaramos una funcion que nos permita recivir un parametro en este caso el nombre de la persona a salidar y le enciamos un saludo, esta funcion
+    //La asigna,os a una constante
+
+    const saludar = function (nombre) {return `Hola ${nombre} `}
+    console.log(saludar('Derek Sensi'));
+    console.log('El tipo de dato de la constante es ${typeoff}');
