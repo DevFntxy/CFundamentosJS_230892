@@ -24,7 +24,7 @@ console.log(`Los datos del PRODUCTO son: \n
     Marca:  ${Producto_Marca}, Tipo de Dato <${typeof (Producto_Marca)}>
     Modelo: ${Producto_Modelo}, Tipo de Dato <${typeof (Producto_Modelo)}>
     Precio: ${Producto_Precio}, Tipo de Dato <${typeof (Producto_Precio)}>
-    Disponibilidad: ${Producto_Disponibilidad}, Tipo de Dato <${typeof (Producto_Disponibilidad)}>   
+    Disponibilidad: ${Producto_Disponibilida}, Tipo de Dato <${typeof (Producto_Disponibilidad)}>   
     Stock: ${Producto_Stock}, Tipo de Dato <${typeof (Producto_Stock)}>
     Barcode: ${Producto_Barcode}, Tipo de Dato <${typeof (Producto_Barcode)}>
     Imagen: ${Producto_Imagen}, Tipo de Dato <${typeof (Producto_Imagen)}>
@@ -97,7 +97,7 @@ let Pedido = {
     Comprador_Clave: 3216,
     Cantidad: 2,
     Estatus: "Carrito de Compra",
-    TipoPago: "Tarjeta de Crédito"
+    TipoPago: "TarjetadeCrédito"
 }
 
 // En base  a los 3 objetos necesitamos calcular el costo de la compra y si le alcanza con sus saldo a favor
@@ -134,3 +134,111 @@ Producto2.Disponibilidad = "Sí";
 let nuevoTipoDisponibilidad = typeof (Producto2.Disponibilidad)
 console.log(Producto2);
 console.log(`El nuevo tipo de dato de la disponibilidad es: ${nuevoTipoDisponibilidad}`)
+
+//Agregar nuevas propiedades a un objeto existente
+
+console.log("%c5.- Agregacion de propiedades de un objeto (MUTACION) ", style_console);
+
+console.log("Objeto antes de ser modificado")
+console.table(Comprador);
+
+// Agregando prpiedades
+
+Comprador['Direccion']="Jardines del sur , Apizaco , Tlaxcala,Mexico"
+Comprador['Tipo']="Free"
+Comprador ['Estatus']="Inactivo"
+Comprador['TotalCompras']= "3444"
+console.log("Objeto depues de  ser modificadi")
+console.table(Comprador)
+
+//Eliminar propiedades
+
+console.log("%c6.- Eliminacion de propiedades", style_console);
+console.log("Objeto antes de eliminar propiedades");
+console.table(Pedido)
+//Eliminamos la propiedad tipo de pago
+delete Pedido.TipoPago
+console.table(Pedido)
+
+console.log("%c7.-Metodos para controlar la mutabilidad de los Objetos, Congelacion (FREEZE)", style_console);
+
+//Si desamos que los objetos no sean modificados ni en estructura ni en valor utilizaremos el metodo freezer
+
+console.log('La esturctura del objeto actual COMPRADOR es:')
+
+console.table(Comprador)
+Object.freeze(Comprador);
+
+//intentamos agregar, eliminar o modificar los valores de sus propiedades
+
+Comprador.Nombre="No soy Derek"
+delete Comprador.Apellidos;
+Comprador.Direccion="No tiene direcion"
+console.log("Verificamos si se realizaron cambios al comprador:")
+console.table(Comprador)
+
+console.log("%c8.-Metodos para controlar la mutabilidad de los Objetos, sellado (SEAL)", style_console);
+//Si olo deseamos modificar los valores pero no esturcctura usamos SEAL
+
+console.log("Objeto original")
+console.table(Pedido)
+
+Object.seal(Pedido)
+//Intentamos modificar su estructura
+Pedido['FechaPedido'] ="24/82/12"
+delete Pedido.Producto_Clave;
+
+console.log("Verificamos si se realizaron cambios al Objeto Pedido:")
+console.table(Pedido)
+
+
+//Intentamos modificar el valor de las propiedades
+
+Pedido.Cantidad = 20;
+
+console.log("Verificamos si se realizaron cambios al Objeto Pedido:")
+console.table(Pedido)
+
+//Destructuracion de 2 objetos o mas  objetos 
+
+console.log("%c9.-Destructuracion de  2 objetos", style_console);
+
+const {} = Producto;
+let{Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo} = Comprador
+let{Precio: ProductoPrecio, SKU: ProductoSKU, Marca: ProductoMarca}= Producto
+
+
+if (ProductoPrecio> 2000)
+    ProductoPrecio="Caro"  
+else
+    ProductoPrecio = "Barato"
+
+
+if (clienteSaldo>0)
+    clienteSaldo = "A favor"
+else if (clienteSaldo < 0)
+    clienteSaldo = "En contra"
+else
+    clienteSaldo = "Sin deuda"
+
+let clienteNivel;
+
+    if(clienteTipo =="Premium")
+        clienteNivel=1;
+    if(clienteTipo == "Fremium")
+        clienteNivel =2 ;
+    if(clienteNivel=="No identificado")
+        clienteNivel =3;
+
+if(clientePais == "Mexico")
+    clientePais = "Nacional"
+else
+    clientePais="Extrangero"
+
+
+let datosClientesPromociones={clienteCorreo,clientePais,clienteNivel,clienteSaldo,ProductoMarca,ProductoPrecio}
+
+console.log("Los datos del cliente y sus habitos de compra son: ")
+console.table(datosClientesPromociones)
+//Operaciones sobre Objetos 
+console.log("%c8.-Union de objetos", style_console);
