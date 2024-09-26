@@ -38,6 +38,7 @@ console.log(typeof (Producto_SKU));
 console.log("%c2.- Objeto", style_console);
 let Producto =
 {
+    ID: 12,
     Nombre: "Celular",
     Marca: "Xiaomi",
     Modelo: "12 lite",
@@ -67,6 +68,7 @@ console.log("%c3.- Destructuración de Objetos", style_console);
 
 let Producto2 =
 {
+    ID: 22,
     Clave: 316,
     Nombre: "Celular",
     Marca: "Huawei",
@@ -83,6 +85,7 @@ let Producto2 =
 
 let Comprador =
 {
+    ID:1222,
     Clave: 3216,
     Nombre: "Derek",
     Apellidos: "Sesni Carreño",
@@ -93,6 +96,7 @@ let Comprador =
 }
 
 let Pedido = {
+    ID:33,
     Producto_Clave: 316,
     Comprador_Clave: 3216,
     Cantidad: 2,
@@ -241,4 +245,61 @@ let datosClientesPromociones={clienteCorreo,clientePais,clienteNivel,clienteSald
 console.log("Los datos del cliente y sus habitos de compra son: ")
 console.table(datosClientesPromociones)
 //Operaciones sobre Objetos 
-console.log("%c8.-Union de objetos", style_console);
+
+console.log("%c10.-Union de objetos", style_console);
+
+console.log("Imprimimos la estructura y valores del objeto PRODUCTO")
+console.table(Producto);
+
+console.log("Imprimimos ña estructura y valores del objeto PEDIDO")
+console.table(Pedido);
+
+
+
+let Producto3 ={...Producto}
+const Venta = Object.assign(Producto3, Pedido);
+console.log("Consultamos este nuevo objeto Venta");
+console.table(Venta);
+
+// ! assign no solo permite la fusion de 2 o mas objetos, tambien muta los objetos originales, permituendo el valor el original del ID en este caso  
+
+//Conservando propiedades que lleven el mismo nombre
+
+ console.log("%c11.-Union de objetos (Conservando variables iguales)", style_console);
+
+ console.table(Producto);
+ 
+ console.table(Comprador);
+ 
+ console.table(Pedido);
+
+ let venta2 = {
+
+    producto:{...Producto},
+    comprador:{...Comprador},
+    pedido:{...Pedido}
+ }
+
+ console.log("Fusionamos los 3 objetos de en uno nuevo, sin perdida de informacion")
+
+ console.table(venta2)
+
+ console.log("%c11.-Union de objetos (Conservando variables iguales)", style_console);
+
+ //Verificar el status de mutabilidad del objeto 
+ console.log("Vamos a verificar el estatus de mutabilidad del pbjeto PEDIDO")
+ console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Pedido)}`)
+ console.log(`Esta el objeto de Pedido Sellado? : ${Object.isFrozen(Pedido)}`)
+
+ console.log("Vamos a verificar el estatus de mutabilidad del pbjeto COMPRADOR")
+ console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Comprador)}`)
+ console.log(`Esta el objeto de Pedido Sellado? : ${Object.isFrozen(Comprador)}`)
+
+ console.log("Vamos a verificar el estatus de mutabilidad del pbjeto PRODUCTO")
+ console.log(`Esta el objeto de Pedido Congelado? : ${Object.isFrozen(Producto)}`)
+ console.log(`Esta el objeto de Pedido Sellado? : ${Object.isFrozen(Producto)}`)
+
+ //Modificamos la estructura de producto , agregando una nueva propiedad
+ Producto[`isLegacy`]=false;
+
+ console.log(venta2);
