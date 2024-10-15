@@ -14,6 +14,7 @@ Precio a iniciar el desarrollo de software para web usando el framework de NodeJ
 | 4.  | Declaracion de variables (StringBigInt/Symbol/Null/Fuction) |6| ✅ Finalizada |
 | 5.  | Introduccion a Objetos |19| ✅ Finalizada  |
 | 6.  | Arreglos |18| ✅ Finalizada  |
+| 7.  | Sentencias de Control y Ciclos |16|  ✅ Finalizada  |
 
 ## Autor
 Derek Sesni Carreño
